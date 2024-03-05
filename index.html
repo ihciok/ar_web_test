@@ -15,13 +15,13 @@
         var currentImageIndex = 0;
 
         // 次の画像へ遷移する関数
-        function nextImage() {
+        function changeToNextImage() {
             currentImageIndex = (currentImageIndex + 1) % images.length; // 次の画像のインデックス
             updateImage();
         }
 
         // 前の画像へ遷移する関数
-        function previousImage() {
+        function changeToPreviousImage() {
             currentImageIndex = (currentImageIndex - 1 + images.length) % images.length; // 前の画像のインデックス
             updateImage();
         }
@@ -31,6 +31,24 @@
             document.getElementById("ar-image").setAttribute("src", images[currentImageIndex]); // 画像のソースを変更
         }
     </script>
+    <style>
+        .button-container {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px; /* ボタン間の間隔を少し広げる */
+        }
+
+        button {
+            padding: 15px 30px; /* ボタンの内側の余白を増やす */
+            font-size: 16px; /* テキストサイズを大きくする */
+            border-radius: 5px; /* ボタンの角を丸くする */
+            background-color: #f0f0f0; /* ボタンの背景色 */
+            border: none; /* ボーダーを消す */
+        }
+    </style>
 </head>
 
 <body style="margin : 0px; overflow: hidden;">
@@ -42,10 +60,10 @@
         </a-marker>
     </a-scene>
 
-    <!-- 次の画像へ遷移するボタン -->
-    <button style="position: absolute; top: 20px; left: 20px;" onclick="nextImage()">次の画像</button>
-    <!-- 前の画像へ遷移するボタン -->
-    <button style="position: absolute; top: 20px; left: 100px;" onclick="previousImage()">前の画像</button>
+    <div class="button-container">
+        <button onclick="changeToPreviousImage()">前の画像</button>
+        <button onclick="changeToNextImage()">次の画像</button>
+    </div>
 </body>
 
 </html>
