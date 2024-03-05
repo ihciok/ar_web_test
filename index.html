@@ -11,11 +11,7 @@
     <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.2/aframe/build/aframe-ar.js"></script>
     <script>
         // 画像のソースを保持する配列
-        var images = [
-            "img/test_01.png",
-            "img/test_02.png",
-            "img/test_03.png"
-        ];
+        var images = ["img/doc_01.png", "img/doc_02.png", "img/doc_03.png"];
 
         var currentImageIndex = 0;
 
@@ -63,7 +59,7 @@
     <a-scene embedded arjs="debugUIEnabled:false;">
         <a-entity camera></a-entity>
         <a-marker type="pattern" url="img/pattern_simple_qrcode.patt">
-            <a-image id="ar-image" width="4" height="4" position="0.2 0.4 0.4" rotation="-90 0 0" src="img/test_01.png">
+            <a-image id="ar-image" width="4" height="4" position="0.2 0.4 0.4" rotation="-90 0 0" src="img/doc_01.png">
             </a-image>
         </a-marker>
     </a-scene>
